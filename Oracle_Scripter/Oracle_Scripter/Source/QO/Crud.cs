@@ -7,7 +7,7 @@
             return
                 @"SELECT * FROM (SELECT NAME As Name, TYPE As TypeName, MAX(LINE) AS LineNumber
                     FROM ALL_SOURCE
-                    WHERE OWNER = 'ISKUR'
+                    WHERE OWNER = '#SCHEMA#'
                     AND (TYPE IN('#OBJECTTYPES#'))
                     GROUP BY TYPE, Name)
                     ORDER BY TypeName, Name";
@@ -40,7 +40,7 @@
         {
             return @"SELECT *
                      FROM ALL_SOURCE
-                     WHERE OWNER = 'ISKUR'
+                     WHERE OWNER = '#SCHEMA#'
                      AND NAME='#OBJECTNAME#'
                      ORDER BY LINE";
         }
@@ -49,7 +49,7 @@
         {
             return @"SELECT *
                      FROM ALL_SOURCE
-                     WHERE OWNER = 'ISKUR'
+                     WHERE OWNER = '#SCHEMA#'
                      ORDER BY NAME, LINE";
         }
 
